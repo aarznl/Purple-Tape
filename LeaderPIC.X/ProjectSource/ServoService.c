@@ -48,23 +48,23 @@ bool InitServoService(uint8_t Priority)
      Initialize PWM system for servo control
     *********************************************/
     PWMSetup_BasicConfig(5);                // use 2 channels
-//    PWMSetup_AssignChannelToTimer(SERVO_CHANNEL_1, _Timer3_);
+    PWMSetup_AssignChannelToTimer(SERVO_CHANNEL_1, _Timer3_);
     PWMSetup_AssignChannelToTimer(SERVO_CHANNEL_2, _Timer3_);
     PWMSetup_AssignChannelToTimer(SERVO_CHANNEL_3, _Timer3_);
     PWMSetup_AssignChannelToTimer(SERVO_CHANNEL_4, _Timer3_);
-    PWMSetup_AssignChannelToTimer(SERVO_CHANNEL_5, _Timer3_);
-//    PWMSetup_MapChannelToOutputPin(SERVO_CHANNEL_1, PWM_RPB4); //arm
+    // PWMSetup_AssignChannelToTimer(SERVO_CHANNEL_5, _Timer3_);
+    PWMSetup_MapChannelToOutputPin(SERVO_CHANNEL_1, PWM_RPB4); //arm
     PWMSetup_MapChannelToOutputPin(SERVO_CHANNEL_2, PWM_RPB11); //intake
     PWMSetup_MapChannelToOutputPin(SERVO_CHANNEL_3, PWM_RPA3); //indicator
     PWMSetup_MapChannelToOutputPin(SERVO_CHANNEL_4, PWM_RPB13); //bucket
-    PWMSetup_MapChannelToOutputPin(SERVO_CHANNEL_5, PWM_RPB2); //arm
+ //   PWMSetup_MapChannelToOutputPin(SERVO_CHANNEL_5, PWM_RPB2); //arm
 
     // set default position
-//    PWMOperate_SetDutyOnChannel(SERVO_DEFAULT_DUTY, SERVO_CHANNEL_1);
+   PWMOperate_SetDutyOnChannel(SERVO_DEFAULT_DUTY, SERVO_CHANNEL_1);
     PWMOperate_SetDutyOnChannel(INTAKE_DEFAULT_DUTY, SERVO_CHANNEL_2);
     PWMOperate_SetDutyOnChannel(INDICATOR_DEFAULT_DUTY, SERVO_CHANNEL_3);
     PWMOperate_SetDutyOnChannel(SERVO_DEFAULT_DUTY, SERVO_CHANNEL_4);
-    PWMOperate_SetDutyOnChannel(ARM_DEFAULT_DUTY, SERVO_CHANNEL_5);
+//    PWMOperate_SetDutyOnChannel(ARM_DEFAULT_DUTY, SERVO_CHANNEL_5);
     
 
     // set the DC motor for conveyor
